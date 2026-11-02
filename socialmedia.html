@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+ <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+ <script src="https://kit.fontawesome.com/d5a4936763.js" crossorigin="anonymous" ></script>
+<style>
+    .navbar {
+      background-color: #4d6571;
+      padding: 0;
+    }
+
+    .navbar .nav-link {
+      color: white;
+      padding: 18px 25px;
+      font-size: 20px;
+    }
+
+    .navbar .nav-link:hover,
+    .navbar .nav-link.active {
+      background-color: white;
+      color: black;
+    }
+
+    .navbar-brand {
+      background-color: #37474f;
+      color: white;
+      padding: 18px 30px;
+      font-size: 22px;
+      margin: 0;
+    }
+
+    .notification {
+      background-color: #4caf50;
+      color: white;
+      border-radius: 50%;
+      padding: 3px 9px;
+      font-size: 15px;
+      margin-left: 5px;
+    }
+
+    .profile-img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+
+    .profile-link {
+      margin-left: auto;
+      padding: 15px 30px;
+    }
+    .shadow{
+    	box-shadow:0px 0px 30px 0px black;
+    	margin-top: 30px;
+    }.postbtn{
+    	height: 40px;
+    	width: 80px;
+    	background-color: gray;
+    	border: none;
+    	color: white;
+    	margin-top: 15px;
+    }
+    .footer1{
+      margin-top: 30px;
+      color: white;
+      margin-left: -18px;
+      margin-right: -18px;
+      width: 1300px;
+    }
+    .footer-top{
+      background-color: #435963;
+      padding: 20px;
+      height: 118px;
+    }
+    .footer-top h3{
+      font-size: 25px;
+      font-weight:normal ;
+      margin-top: 18px;
+      color: white;
+    }
+    .footer-bottom{
+      background-color: #303f46;
+      padding: 10px 25px;
+      height: 80px;
+      color: white;
+    }
+    .footer-bottom p{
+      font-size: 22px;
+      margin-top: 15px;
+      color: white;
+    }
+    
+    }
+    
+    .mm{
+      margin: 0;
+      margin-left: 20px;
+    }
+    .bug.icon{
+      font-size: 100px;
+      size: 60px;
+      width: 100px;
+      height: 100px;
+    }
+  .profile{
+    margin-right: 200px;
+    text-align: left;
+  }
+  .friend-buttons{
+    width: 100%;
+    display:flex ;
+    margin-top: 10px;
+  }
+  .friend-card{
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: 8px;
+  }
+  .im{
+    margin-left: 65px;
+  }
+  .btn-accept{
+    background-color: #72b77a;
+    color: white;
+    border: none;
+    width: 300%;
+    padding: 20px;
+    border-radius: 0;
+    height: 40px;
+    font-size: 25px;
+  }
+  .btn-reject{
+    background-color: #cc7b75;
+    color: white;
+    width: 300%;
+    padding: 20px;
+    border-radius: 0;
+    border: none;
+    height: 40px;
+    font-size: 25px;
+  }
+  .btn-accept:hover{
+    background-color: #5ca866;
+    color: white;
+  }
+  .btn-reject:hover{
+background-color: #b85f59;
+color: white;
+  }
+  .group-card{
+    padding: 5px 18px;
+    background-color: #7d97a5;
+  }
+  .group-item{
+    font-size: 12px;
+    gap:40px;
+    color: white;
+    margin-top: 10px;
+  }
+  .group-item:hover{
+    background-color: #fff;
+  }
+  .gap{
+    margin-top: 20px;
+  }
+  .interest-card{
+    padding: 25px 15px;
+  }
+  .tag{
+    display: inline-block;
+    padding: 4px 10px;
+    margin: 0 2px 5px 0;
+    font-size: 9px;
+    line-height: 15px;
+  }
+  .tag-dark{
+    background-color:#344750 ;
+    color: white;
+  }
+  .tag-blue{
+    background-color: #607d8b;
+    color: white;
+  }
+  .tag-light-blue{
+    background-color: #a5b8c1;
+    color: white;
+  }
+  .tag-grey{
+    background-color: #e0e5e8;
+    color: white;
+  }
+  .notice-card{
+    position: relative;
+    background-color: #dfe6e9;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 15px 15px 15px;
+  }
+  .notice-card h4{
+    font-size: 15px;
+    font-weight: blod;
+    margin: 0 0 10px;
+  }
+  .notice-card p{
+    font-size: 13px;
+    margin: 0;
+    line-height: 1.6;
+  }
+  .close-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 61px;
+    height: 58px;
+    border: none;
+    background-color: #bdcdd4;
+    color: black;
+    font-size: 12px;
+    color: pointer;
+  }
+  .i{
+    margin-left: 50px;
+    padding: 0;
+  }
+  </style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand navbar-dark">
+
+  <!-- Logo -->
+  <a href="#" class="navbar-brand">
+    <i class="fa-solid fa-house"></i>Logo
+  </a>
+
+  <!-- Navbar Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a href="#" class="nav-link">
+        <i class="fa-solid fa-earth-americas"></i>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a href="#" class="nav-link">
+        <i class="fa-solid fa-user"></i>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a href="#" class="nav-link">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a href="#" class="nav-link">
+        <i class="fa-solid fa-bell"></i>
+        <span class="notification">3</span>
+      </a>
+    </li>
+  </ul>
+
+  <!-- Profile Image on Right -->
+  <a href="#" class="profile-link">
+    <img
+      src="https://www.w3schools.com/w3images/avatar2.png"
+      class="profile-img"
+      alt="Profile"
+    >
+  </a>
+</nav>
+
+
+  <div class="container-fluid">
+  	<div class="row">
+  		<div class="col-4">
+  			<div class="card shadow">
+  				<div class="card-body">
+  					<h4 class="text-center">My Profile</h4>
+  						<center>
+  							<img src="https://www.w3schools.com/w3images/avatar3.png" class="rounded-circle" height="100px">
+  						</center><hr>
+  						<p > <i class="fa-solid fa-pencil "></i>Designer, UI</p>
+  						 <p> <i class="fa-solid fa-house"></i>London, UK</p>
+  						<p><i class="fa-solid fa-cake-candles"></i>April 1, 1988</p>
+
+  				</div>
+  			</div><br>
+
+              <div class="group-card">
+        <div class="group-item">
+          <i class="fa-regular fa-circle"></i>
+          <span class="gap">My Groups</span>
+        </div>
+
+        <div class="group-item">
+          <i class="fa-regular fa-calendar-check"></i>
+          <span>My Event</span>
+        </div>
+
+        <div class="group-item">
+          <i class="fa-regular fa-circle"></i>
+          <span>My Photos</span>
+        </div>
+      </div>
+
+      <div class="interest-card shadow">
+        <h4 class="text-secondary">Interests</h4>
+        <div>
+          <span class="tag tag-dark">News</span>
+          <span class="tag tag-dark">W3Schools</span>
+          <span class="tag tag-dark">Labels</span>
+          <span class="tag tag-dark">Games</span>
+          <span class="tag tag-blue">Friends</span>
+          <span class="tag tag-blue">Games</span>
+          <span class="tag tag-blue">Friends</span>
+          <span class="tag tag-light-blue">Food</span>
+          <span class="tag tag-grey">Design</span>
+          <span class="tag tag-grey">Art</span>
+          <span class="tag tag-muted">Photos</span>
+        </div>
+      </div>
+
+<div class="notice-card shadow"id="notice">
+  <button class="close-btn" onclick="document.getElementById('notice').style.display='none'"aria-label="Close notification">
+    &times;
+  </button>
+  <h4>Hey!</h4>
+  <p>People are looking at your profile. Find out who.</p>
+</div>
+
+
+  		</div>
+
+
+
+  		 <div class="col-4">
+  		 	<div class="card shadow">
+  		 		<div class="card-body">
+  		 			<p class="text-muted">Social Media template by w3.css</p>
+  		 			<input type="text" placeholder="Status:Feeling Blue" class="form-control">
+  		 			<button class="postbtn">
+  		 				<i class="fa-solid fa-pencil"></i>Post
+  		 			</button>
+  		 		</div>
+  		 	</div>
+
+  		 	<div class="card shadow mt-3">
+  		 		<div class="card-body">
+  		 			<img src="https://www.w3schools.com/w3images/avatar2.png"class="rounded-circle"height="60px">
+  		 			<span>John Doe</span>
+  		 			<span class="float-right">1 min</span><hr>
+
+  		 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+  		 			<div class="row">
+  		 				<div class="col-6">
+  		 					<img src="https://www.w3schools.com/w3images/lights.jpg" class="w-100">
+  		 				</div>
+
+  		 				 <div class="col-6">
+  		 					<img src="https://www.w3schools.com/w3images/nature.jpg" class="w-100">
+  		 				</div>
+
+  		 			</div>
+
+  		 			<button class="btn btn-secondary mt-3">
+  		 				<i class="fa-dolid fa-thumbs-up">Like</i>
+  		 			</button>
+
+  		 			  <button class="btn btn-secondary mt-3">
+  		 				<i class="fa-dolid fa-comment">Comment</i>
+  		 			</button>
+  		 		</div>
+  		 	</div>
+
+          <div class="card shadow mt-3">
+          <div class="card-body">
+            <img src="https://www.w3schools.com/w3images/avatar5.png"class="rounded-circle"height="60px">
+            <span>John Doe</span>
+            <span class="float-right">16 min</span><hr>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+            <div class="row">
+
+            </div>
+
+            <button class="btn btn-secondary mt-3">
+              <i class="fa-dolid fa-thumbs-up">Like</i>
+            </button>
+
+              <button class="btn btn-secondary mt-3">
+              <i class="fa-dolid fa-comment">Comment</i>
+            </button>
+          </div>
+        </div>
+
+                  <div class="card shadow mt-3">
+          <div class="card-body">
+            <img src="https://www.w3schools.com/w3images/avatar6.png"class="rounded-circle"height="60px">
+            <span>Angie Jane</span>
+            <span class="float-right">32 min</span><hr>
+
+            <p>Have you seen this?</p>
+            <div class="col-6">
+                <img src="https://www.w3schools.com/w3images/nature.jpg" class=" w-100 i" height="100px" width="100px">
+              </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+
+
+
+            <div class="row">
+
+            </div>
+
+            <button class="btn btn-secondary mt-3">
+              <i class="fa-dolid fa-thumbs-up">Like</i>
+            </button>
+
+              <button class="btn btn-secondary mt-3">
+              <i class="fa-dolid fa-comment">Comment</i>
+            </button>
+          </div>
+        </div>
+
+  		 </div>
+
+
+  		<div class="col-4">
+  			<div class="card shadow ">
+  				<div class="card-body">
+  					<p class="text-center">Upcoming Events: </p>
+  					<img src="https://www.w3schools.com/w3images/forest.jpg"class="w-100">
+  					<p class="text-center mt-3 font-weight-bold">Holiday</p>
+  					<p class="text-center">Friday 15:00</p>
+  					<button class="btn btn-light btn-block infobtn">Info</button>
+  				</div>
+  			</div>
+
+        <div class="card  friend-card shadow ">
+          <div class="card-body">
+            <p class="text-center">Friend Request </p>
+            <img src="https://www.w3schools.com/w3images/avatar6.png " height="200px" width="200px" class="im">
+            <p class="text-center mt-3 ">Jane Doe</p>
+            <div class="friend-buttons">
+              <button class="btn btn-accept pt-2"><i class="fa-duotone fa-solid fa-check"></i></button>
+              <button class="btn btn-reject pt-2"><i class="fa-duotone fa-light fa-xmark"></i></button>
+            </div>
+          </div>
+        </div>
+
+         <div class="card shadow ">
+          <div class="card-body">
+            <center class="pt-2 pb-2">ADS</center>
+          </div>
+        </div>
+
+        <div class="card shadow ">
+          <div class="card-body">
+        <center class="pt-5 pb-5 bug.icon"><i class="fa fa-bug w3-xxlarge "></i></center>
+                  </div>
+        </div>
+
+       
+
+      </div>
+
+       <footer class="footer1">
+        <div class="footer-top">
+          <h3>Footer</h3>
+        </div>
+
+       <div class="footer-bottom">
+          <p>Powered by <u>w3.css</u></p>
+        </div>
+
+</footer>
+  		</div>
+
+
+  	</div>
+
+
+  </div>
+
+</body>
+</html>
